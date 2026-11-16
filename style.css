@@ -1,0 +1,356 @@
+/* Colour, font and spacing variables used by every rule below */
+:root {
+  --text: #14181F;
+  --bg: #FFFFFF;
+  --surface: #F3F4F6;
+  --muted: #3F4651;
+  --line: #CDD2D9;
+  --accent: #0F7B45;
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 40px;
+  --s5: 64px;
+  --heading-font: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --body-font: "Inter", Arial, sans-serif;
+}
+
+/* Base element styles: page, headings, paragraphs, links */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 var(--s1);
+}
+
+h1 {
+  font-size: 4.5rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+  margin-bottom: var(--s3);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin: 0 0 var(--s1);
+  max-width: 70ch;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--text);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Header and navigation bar (flexbox) */
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+#site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s1) var(--s3);
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--s1) var(--s3);
+}
+
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--heading-font);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--s3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Buttons and text links that act as calls to action */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 var(--s3);
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.button:hover {
+  color: var(--bg);
+  background: var(--text);
+  border-color: var(--text);
+}
+
+.text-link,
+.download-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s2) var(--s3);
+  margin-top: var(--s3);
+}
+
+/* Page layout: main column and spacing between sections */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--s3);
+}
+
+section {
+  padding: var(--s4) 0;
+}
+
+/* Hero section at the top of the page */
+#hero {
+  padding-top: var(--s5);
+}
+
+.lead {
+  font-size: 1.375rem;
+  line-height: 1.4;
+}
+
+/* Cards: grid layout, flat, one background tone */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--s2);
+}
+
+.card {
+  padding: var(--s3);
+  background: var(--surface);
+  border-radius: 4px;
+}
+
+.meta {
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+/* Resume section: grey panel holding a white sheet */
+#resume {
+  padding: var(--s4) var(--s3);
+  background: var(--surface);
+}
+
+.sheet {
+  max-width: 794px;
+  margin: 0 auto;
+  padding: var(--s4);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  background: var(--bg);
+  border: 1px solid var(--line);
+}
+
+.sheet p {
+  max-width: none;
+}
+
+.sheet-name {
+  font-size: 2.25rem;
+}
+
+.sheet-heading {
+  margin: var(--s3) 0 var(--s1);
+  padding-bottom: 4px;
+  font-size: 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.entry {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 var(--s2);
+  margin-top: var(--s1);
+  font-weight: 600;
+}
+
+.sheet ul {
+  margin: 0 0 var(--s1);
+  padding-left: 1.25rem;
+}
+
+.sheet li {
+  margin-bottom: 4px;
+}
+
+/* Contact section at the bottom of the page */
+#contact {
+  padding-bottom: var(--s5);
+}
+
+/* Turn off transitions for people who ask for less motion */
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}
+
+/* Screens narrower than 700px: smaller type, tighter edges, stacked items */
+@media (max-width: 699px) {
+  #site-header {
+    position: static;
+  }
+
+  #site-nav {
+    padding: var(--s1) var(--s2);
+  }
+
+  .nav-links {
+    gap: 0 var(--s2);
+  }
+
+  main {
+    padding: 0 var(--s2);
+  }
+
+  h1 {
+    font-size: 3.25rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  #resume {
+    padding: var(--s3) var(--s2);
+  }
+
+  .sheet {
+    padding: var(--s2);
+  }
+
+  .entry {
+    flex-direction: column;
+  }
+}
+
+/* A4 page size for printing the resume */
+@page {
+  size: A4;
+  margin: 14mm;
+}
+
+/* Print: show only #resume, black text on white, one A4 page */
+@media print {
+  #site-header,
+  main > section:not(#resume),
+  #resume > h2,
+  .download-link {
+    display: none;
+  }
+
+  body {
+    font-size: 10pt;
+    line-height: 1.35;
+    color: #000;
+    background: #fff;
+  }
+
+  main {
+    max-width: none;
+    padding: 0;
+  }
+
+  #resume {
+    padding: 0;
+    background: #fff;
+  }
+
+  .sheet {
+    max-width: none;
+    padding: 0;
+    font-size: 10pt;
+    line-height: 1.35;
+    border: 0;
+  }
+
+  .sheet * {
+    color: #000;
+  }
+
+  .sheet a {
+    text-decoration: none;
+  }
+
+  .sheet-name {
+    font-size: 22pt;
+  }
+
+  .sheet-heading {
+    margin-top: 10pt;
+    font-size: 12pt;
+    border-bottom: 1px solid #000;
+  }
+}
